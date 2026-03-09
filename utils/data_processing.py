@@ -1,6 +1,13 @@
 import pandas as pd
+import os
 
-data = pd.read_csv("CoW.csv", sep=";")
+# Get directory of this script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Build path to CSV
+csv_path = os.path.join(BASE_DIR, "..", "CoW.csv")
+
+data = pd.read_csv(csv_path, sep=";")
 
 data = data.drop(columns=["Column1"])
 
